@@ -29,8 +29,8 @@ void PhysVehicle3D::Render()
 
 	for(int i = 0; i < vehicle->getNumWheels(); ++i)
 	{
-		wheel.radius = info.wheels[0].radius;
-		wheel.height = info.wheels[0].width;
+		wheel.radius = info.wheels[i].radius;
+		wheel.height = info.wheels[i].width;
 
 		vehicle->updateWheelTransform(i);
 		vehicle->getWheelInfo(i).m_worldTransform.getOpenGLMatrix(&wheel.transform);
@@ -65,7 +65,7 @@ void PhysVehicle3D::Render()
 	wing.transform.M[12] += fw_offset.getX();
 	wing.transform.M[13] += fw_offset.getY();
 	wing.transform.M[14] += fw_offset.getZ();
-	wing.color = Green;
+	wing.color = Purple;
 
 	Cube glass(info.glass_size.x, info.glass_size.y, info.glass_size.z);
 	vehicle->getChassisWorldTransform().getOpenGLMatrix(&glass.transform);

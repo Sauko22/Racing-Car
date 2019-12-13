@@ -39,8 +39,8 @@ bool ModulePlayer::Start()
 
 	// Wheel properties ---------------------------------------
 	float connection_height = 1.2f;
-	float wheel_radius = 0.6f;
-	 float wheel_radius_front= 0.4f;
+	float wheel_radius = 0.7f;
+	 float wheel_radius_front= 0.5f;
 	float wheel_width = 0.5f;
 	float suspensionRestLength = 1.2f;
 
@@ -61,7 +61,7 @@ bool ModulePlayer::Start()
 	car.wheels[0].direction = direction;
 	car.wheels[0].axis = axis;
 	car.wheels[0].suspensionRestLength = suspensionRestLength;
-	car.wheels[0].radius = wheel_radius;
+	car.wheels[0].radius = wheel_radius_front;
 	car.wheels[0].width = wheel_width;
 	car.wheels[0].front = true;
 	car.wheels[0].drive = true;
@@ -73,7 +73,7 @@ bool ModulePlayer::Start()
 	car.wheels[1].direction = direction;
 	car.wheels[1].axis = axis;
 	car.wheels[1].suspensionRestLength = suspensionRestLength;
-	car.wheels[1].radius = wheel_radius;
+	car.wheels[1].radius = wheel_radius_front;
 	car.wheels[1].width = wheel_width;
 	car.wheels[1].front = true;
 	car.wheels[1].drive = true;
@@ -137,7 +137,7 @@ update_status ModulePlayer::Update(float dt)
 	}
 	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_REPEAT)
 	{
-		acceleration = MAX_ACCELERATION *10;
+		acceleration = MAX_ACCELERATION *15;
 	}
 
 	if(App->input->GetKey(SDL_SCANCODE_LEFT) == KEY_REPEAT)
