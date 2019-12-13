@@ -25,7 +25,7 @@ void PhysVehicle3D::Render()
 {
 	Cylinder wheel;
 
-	wheel.color = Blue;
+	wheel.color = Black;
 
 	for(int i = 0; i < vehicle->getNumWheels(); ++i)
 	{
@@ -38,18 +38,48 @@ void PhysVehicle3D::Render()
 		wheel.Render();
 	}
 
+	//Chassis of the car
 	Cube chassis(info.chassis_size.x, info.chassis_size.y, info.chassis_size.z);
 	vehicle->getChassisWorldTransform().getOpenGLMatrix(&chassis.transform);
 	btQuaternion q = vehicle->getChassisWorldTransform().getRotation();
 	btVector3 offset(info.chassis_offset.x, info.chassis_offset.y, info.chassis_offset.z);
 	offset = offset.rotate(q.getAxis(), q.getAngle());
-
 	chassis.transform.M[12] += offset.getX();
 	chassis.transform.M[13] += offset.getY();
 	chassis.transform.M[14] += offset.getZ();
+	chassis.color = Green;
+	
+	Cube connection(info.connection_size.x, info.connection_size.y, info.connection_size.z);
+	vehicle->getChassisWorldTransform().getOpenGLMatrix(&connection.transform);
+	btVector3 b_offset(info.connection_offset.x, info.connection_offset.y, info.connection_offset.z);
+	b_offset = b_offset.rotate(q.getAxis(), q.getAngle());
+	connection.transform.M[12] += b_offset.getX();
+	connection.transform.M[13] += b_offset.getY();
+	connection.transform.M[14] += b_offset.getZ();
+	connection.color = Red;
+
+	Cube wing(info.wing_size.x, info.wing_size.y, info.wing_size.z);
+	vehicle->getChassisWorldTransform().getOpenGLMatrix(&wing.transform);
+	btVector3 fw_offset(info.wing_offset.x, info.wing_offset.y, info.wing_offset.z);
+	fw_offset = fw_offset.rotate(q.getAxis(), q.getAngle());
+	wing.transform.M[12] += fw_offset.getX();
+	wing.transform.M[13] += fw_offset.getY();
+	wing.transform.M[14] += fw_offset.getZ();
+	wing.color = Green;
+
+	Cube glass(info.glass_size.x, info.glass_size.y, info.glass_size.z);
+	vehicle->getChassisWorldTransform().getOpenGLMatrix(&glass.transform);
+	btVector3 u_offset(info.glass_offset.x, info.glass_offset.y, info.glass_offset.z);
+	u_offset = u_offset.rotate(q.getAxis(), q.getAngle());
+	glass.transform.M[12] += u_offset.getX();
+	glass.transform.M[13] += u_offset.getY();
+	glass.transform.M[14] += u_offset.getZ();
 
 
 	chassis.Render();
+	connection.Render();
+	wing.Render();
+	glass.Render();
 }
 
 // ----------------------------------------------------------------------------

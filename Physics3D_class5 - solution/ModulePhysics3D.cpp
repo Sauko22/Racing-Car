@@ -281,12 +281,28 @@ PhysVehicle3D* ModulePhysics3D::AddVehicle(const VehicleInfo& info)
 
 	btCollisionShape* colShape = new btBoxShape(btVector3(info.chassis_size.x*0.5f, info.chassis_size.y*0.5f, info.chassis_size.z*0.5f));
 	shapes.add(colShape);
-
 	btTransform trans;
 	trans.setIdentity();
 	trans.setOrigin(btVector3(info.chassis_offset.x, info.chassis_offset.y, info.chassis_offset.z));
-
 	comShape->addChildShape(trans, colShape);
+
+	btCollisionShape* connectionShape = new btBoxShape(btVector3(info.connection_size.x * 0.5f, info.connection_size.y * 0.5f, info.connection_size.z * 0.5f));
+	shapes.add(connectionShape);
+	btTransform connection_trans;
+	connection_trans.setIdentity();
+	connection_trans.setOrigin(btVector3(info.connection_offset.x, info.connection_offset.y, info.connection_offset.z));
+	comShape->addChildShape(connection_trans, connectionShape);
+
+	btCollisionShape* WingShape = new btBoxShape(btVector3(info.wing_size.x * 0.5f, info.wing_size.y * 0.5f, info.wing_size.z * 0.5f));
+	shapes.add(WingShape);
+	btTransform wing_trans;
+	wing_trans.setIdentity();
+	wing_trans.setOrigin(btVector3(info.wing_offset.x, info.wing_offset.y, info.wing_offset.z));
+	comShape->addChildShape(wing_trans, WingShape);
+
+	
+
+
 
 	btTransform startTransform;
 	startTransform.setIdentity();

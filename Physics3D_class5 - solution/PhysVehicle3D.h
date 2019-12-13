@@ -14,6 +14,7 @@ struct Wheel
 	vec3 axis;
 	float suspensionRestLength; // max length for suspension in meters
 	float radius;
+	float radius_front;// the front wheels
 	float width;
 	bool front; // is front wheel ?
 	bool drive; // does this wheel received engine power ?
@@ -27,6 +28,13 @@ struct VehicleInfo
 	
 	vec3 chassis_size;
 	vec3 chassis_offset;
+	vec3 connection_size; //The part between the chasis and the wing
+	vec3 connection_offset;
+	vec3 wing_size;  // The wing that is at front
+	vec3 wing_offset;
+	vec3 glass_size;  // The glass of the car
+	vec3 glass_offset;
+
 	float mass;
 	float suspensionStiffness; // default to 5.88 / 10.0 offroad / 50.0 sports car / 200.0 F1 car
 	float suspensionCompression; // default to 0.83

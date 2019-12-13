@@ -21,9 +21,15 @@ bool ModulePlayer::Start()
 	VehicleInfo car;
 
 	// Car properties ----------------------------------------
-	car.chassis_size.Set(1.5, 1, 4);
-	car.chassis_offset.Set(0, 1.0, 0);
-	car.mass = 500.0f;
+	car.chassis_size.Set(2.0f, 0.75f, 3.0f);
+	car.chassis_offset.Set(0, 0.5f, 0);
+	car.connection_size.Set(0.8f, 0.75f, 2.0f);
+	car.connection_offset.Set(0.0f, 0.5f, 2.5f);
+	car.wing_size.Set(2.0f, 0.25f, 0.7f);
+	car.wing_offset.Set(0.0f, 0.5f, 3.75f);
+	car.glass_size.Set(0.9f, 0.6f, 1.6f);
+	car.glass_offset.Set(0.0f, 0.9f, -0.2f);
+	car.mass = 700.0f;
 	car.suspensionStiffness = 15.88f;
 	car.suspensionCompression = 0.83f;
 	car.suspensionDamping = 0.88f;
@@ -34,14 +40,16 @@ bool ModulePlayer::Start()
 	// Wheel properties ---------------------------------------
 	float connection_height = 1.2f;
 	float wheel_radius = 0.6f;
+	 float wheel_radius_front= 0.4f;
 	float wheel_width = 0.5f;
 	float suspensionRestLength = 1.2f;
 
 	// Don't change anything below this line ------------------
 
 	float half_width = car.chassis_size.x*0.5f;
-	float half_length = car.chassis_size.z*0.5f;
-	
+	float front_wheels = car.chassis_size.z*1.2;
+	float rear_wheels = car.chassis_size.z * 0.5f;
+
 	vec3 direction(0,-1,0);
 	vec3 axis(-1,0,0);
 	
@@ -49,7 +57,7 @@ bool ModulePlayer::Start()
 	car.wheels = new Wheel[4];
 
 	// FRONT-LEFT ------------------------
-	car.wheels[0].connection.Set(half_width + 0.3f * wheel_width, connection_height, half_length - wheel_radius);
+	car.wheels[0].connection.Set(half_width +0.001f* wheel_width, connection_height -0.001f, front_wheels - wheel_radius);
 	car.wheels[0].direction = direction;
 	car.wheels[0].axis = axis;
 	car.wheels[0].suspensionRestLength = suspensionRestLength;
@@ -61,7 +69,7 @@ bool ModulePlayer::Start()
 	car.wheels[0].steering = true;
 
 	// FRONT-RIGHT ------------------------
-	car.wheels[1].connection.Set(-half_width - 0.3f * wheel_width, connection_height, half_length - wheel_radius);
+	car.wheels[1].connection.Set(-half_width - 0.001f * wheel_width, connection_height - 0.001f, front_wheels - wheel_radius);
 	car.wheels[1].direction = direction;
 	car.wheels[1].axis = axis;
 	car.wheels[1].suspensionRestLength = suspensionRestLength;
@@ -73,7 +81,7 @@ bool ModulePlayer::Start()
 	car.wheels[1].steering = true;
 
 	// REAR-LEFT ------------------------
-	car.wheels[2].connection.Set(half_width + 0.8f * wheel_width, connection_height, -half_length + wheel_radius);
+	car.wheels[2].connection.Set(half_width + 0.8f * wheel_width, connection_height, -rear_wheels + wheel_radius);
 	car.wheels[2].direction = direction;
 	car.wheels[2].axis = axis;
 	car.wheels[2].suspensionRestLength = suspensionRestLength;
@@ -85,7 +93,7 @@ bool ModulePlayer::Start()
 	car.wheels[2].steering = false;
 
 	// REAR-RIGHT ------------------------
-	car.wheels[3].connection.Set(-half_width - 0.8f * wheel_width, connection_height, -half_length + wheel_radius);
+	car.wheels[3].connection.Set(-half_width - 0.8f * wheel_width, connection_height, -rear_wheels + wheel_radius);
 	car.wheels[3].direction = direction;
 	car.wheels[3].axis = axis;
 	car.wheels[3].suspensionRestLength = suspensionRestLength;
@@ -114,7 +122,7 @@ bool ModulePlayer::CleanUp()
 update_status ModulePlayer::Update(float dt)
 {
 	turn = acceleration = brake = 0.0f;
-	float speed_cam = 0.09;
+	/*float speed_cam = 0.09;
 	vec3 p = vehicle->GetPos();
 	vec3 f = vehicle->GetForwardVector();
 
@@ -122,7 +130,7 @@ update_status ModulePlayer::Update(float dt)
 	vec3 camera_new_position = { p.x + (f.x * dist_to_car.x), p.y + f.y + dist_to_car.y, p.z + (f.z * dist_to_car.z) };
 	vec3 speed_camera = camera_new_position - App->camera->Position;
 
-	App->camera->Look(App->camera->Position + (speed_cam * speed_camera), p);
+	App->camera->Look(App->camera->Position + (speed_cam * speed_camera), p);*/
 	if(App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT)
 	{
 		acceleration = MAX_ACCELERATION;
@@ -155,6 +163,7 @@ update_status ModulePlayer::Update(float dt)
 
 	if (App->input->GetKey(SDL_SCANCODE_R) == KEY_DOWN)
 	{
+		//Restart the car
 		vehicle->SetPos(0, 0, 0);
 		acceleration = 0;
 		vec3 zero = { 0.0f, 0.0f, 0.0f };
