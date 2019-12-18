@@ -155,10 +155,14 @@ update_status ModulePlayer::Update(float dt)
 	if(App->input->GetKey(SDL_SCANCODE_DOWN) == KEY_REPEAT)
 	{
 		acceleration = -MAX_ACCELERATION;
-			/*brake += BRAKE_POWER;*/
+			
+	}
+	if (App->input->GetKey(SDL_SCANCODE_B) == KEY_REPEAT)
+	{
+		
+		brake += BRAKE_POWER;
 
-		/*if (vehicle->GetKmh() <= 0.0f)
-			acceleration = -(MAX_ACCELERATION / 2);*/
+	
 	}
 
 	if (App->input->GetKey(SDL_SCANCODE_R) == KEY_DOWN)
