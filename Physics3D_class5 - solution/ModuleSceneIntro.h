@@ -49,6 +49,6 @@ public:
 	PhysMotor3D* left_wheel;
 	PhysMotor3D* right_wheel;
 	
-	p2List<Primitive> map_objects;
+	p2List<Primitive*> map_objects;
 	/*p2List<PhysSensor3D> map_sensors;*/
 };
