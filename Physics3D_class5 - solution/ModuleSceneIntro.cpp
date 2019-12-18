@@ -406,6 +406,14 @@ void ModuleSceneIntro::CreateMap() {
 	CreateRectangle({ -100,1,-63 }, { 1, 4.0f, 1 }, Red, 0);
 
 	//Cinquena curva dreta
-
+	CreateRectangle({ -115,1,-76 }, { 1, 4.0f, 1 }, Red, 0);
+	CreateRectangle({ -114,1,-78 }, { 1, 4.0f, 1 }, Red, 0);
+	CreateRectangle({ -113,1,-80 }, { 1, 4.0f, 1 }, Red, 0);
+	CreateRectangle({ -112,1,-82 }, { 1, 4.0f, 1 }, Red, 0);
+	CreateRectangle({ -111,1,-84 }, { 1, 4.0f, 1 }, Red, 0);
+	CreateRectangle({ -110,1,-86 }, { 1, 4.0f, 1 }, Red, 0);
+	CreateRectangle({ -109,1,-88 }, { 1, 4.0f, 1 }, Red, 0);
+	CreateRectangle({ -108,1,-90 }, { 1, 4.0f, 1 }, Red, 0);
+	CreateRectangle({ -107,1,-92 }, { 1, 4.0f, 1 }, Red, 0);
 
 }
