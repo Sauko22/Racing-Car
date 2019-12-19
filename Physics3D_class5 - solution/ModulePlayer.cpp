@@ -209,7 +209,7 @@ void ModulePlayer::Restart() {
 	//Restart the car
 	vehicle->SetPos(0, 0, 0);
 	acceleration = 0;
-	time_left = max;
+	max = 27;
 	timer.Start();
 	vec3 zero = { 0.0f, 0.0f, 0.0f };
 	vehicle->SetAngularVelocity(zero.x, zero.y, zero.z);
