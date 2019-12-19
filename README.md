@@ -35,7 +35,7 @@ F - Add obstacles in the circuit(hard mode).
 Y - Add 100 as timer(easy mode)
 
 ### Radio
-You can choose between some of the hottests hits of the world. Press 1-8 to listen. I don't own the music presented in this game.
+You can choose between some of the hottests hits in the world. Press 1-8 to listen. I don't own the music presented in this game.
 
 1- Gotta go fast - https://www.youtube.com/watch?v=VTHsOSGJHN0
 
