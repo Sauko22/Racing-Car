@@ -1,6 +1,8 @@
 # Racing Game
-This is the racing game/project of Pol Juan Santos(also known by Sauko).Complete the circuit before you run out of time .Enjoy :)
-By the way, it's my first solo project, so don´t be so hush/mean with the critics. Thanks.
+This is the racing game/project of Pol Juan Santos(also known by Sauko), a student form CITM.Complete the circuit before you run out of time .
+
+By the way, it's my first solo project, so don´t be so hush/mean with the critics. 
+
 
 ## Autor
 Pol Juan Santos --> https://github.com/Sauko22
@@ -33,25 +35,25 @@ F - Add obstacles in the circuit(hard mode).
 Y - Add 100 as timer(easy mode)
 
 ### Radio
-You can choose between some of the hottests hits of the world. Press 1-8 to listen.
+You can choose between some of the hottests hits of the world. Press 1-8 to listen. I don't own the music presented in this game.
 
-1- Gotta go fast
+1- Gotta go fast - https://www.youtube.com/watch?v=VTHsOSGJHN0
 
-2- Try to be the TOP
+2- Try to be the TOP - https://www.youtube.com/watch?v=up6Nxg17opQ
 
-3- Take on you
+3- Take on you - https://www.youtube.com/watch?v=trqszNocEhI
 
-4- Para,para,paradise
+4- Para,para,paradise - https://www.youtube.com/watch?v=ivhWTvrgPzc&t=1s
 
-5- Fight for your country
+5- Fight for your country - https://www.youtube.com/watch?v=GWCldYPEsl4&t=7s
 
-6- Be proud to be part of a comunity
+6- Be proud to be part of a comunity - https://www.youtube.com/watch?v=UrNr7LJM9Tg 
 
-7- Piano time
+7- Piano time - https://www.youtube.com/watch?v=2MtOpB5LlUA
 
-8- Yare yare daze
+8- Yare yare daze - https://www.youtube.com/watch?v=NFjE5A4UAJI
 
-Press 9 to stop the music
+Press 9 to stop the music 
 
 
 # Software and Lib used
