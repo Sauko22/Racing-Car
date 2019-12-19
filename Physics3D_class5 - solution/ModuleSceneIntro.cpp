@@ -19,7 +19,7 @@ bool ModuleSceneIntro::Start()
 	CreateMap();
 	App->camera->Move(vec3(0.0f, 4.0f, -12.5f));
 	App->camera->LookAt(vec3(0, 0, 0));
-
+	
 	return ret;
 }
 

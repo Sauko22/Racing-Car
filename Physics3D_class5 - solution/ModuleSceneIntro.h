@@ -8,10 +8,7 @@
 
 struct PhysBody3D;
 struct PhysMotor3D;
-enum SENSORS {
-	s_type
-
-};
+class btHingeConstraint;
 
 class ModuleSceneIntro : public Module
 {
@@ -44,7 +41,9 @@ public:
 	PhysMotor3D* left_wheel;
 	PhysMotor3D* right_wheel;
 
-	
+	p2DynArray<Cube*> proba1;
+	p2DynArray<Cube*> proba2;
+	p2DynArray<btHingeConstraint*> proba3;
 
 	
 	p2List<Primitive*> map_objects;

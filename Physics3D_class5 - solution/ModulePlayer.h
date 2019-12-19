@@ -2,6 +2,7 @@
 #include "Module.h"
 #include "Globals.h"
 #include "p2Point.h"
+#include "Timer.h"
 
 struct PhysVehicle3D;
 class vec3;
@@ -19,6 +20,7 @@ public:
 	update_status Update(float dt);
 	bool CleanUp();
 	void Camera();
+	void Restart();
 public:
 
 	PhysVehicle3D* vehicle;
@@ -26,4 +28,7 @@ public:
 	float acceleration;
 	float brake;
 	bool  following_camera;
+	Timer timer;
+	float	time_left;
+	float	max;
 };

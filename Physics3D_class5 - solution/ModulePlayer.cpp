@@ -8,6 +8,7 @@
 ModulePlayer::ModulePlayer(Application* app, bool start_enabled) : Module(app, start_enabled), vehicle(NULL)
 {
 	turn = acceleration = brake = 0.0f;
+	max = 27;
 }
 
 ModulePlayer::~ModulePlayer()
@@ -123,6 +124,7 @@ update_status ModulePlayer::Update(float dt)
 {
 	turn = acceleration = brake = 0.0f;
 	Camera();
+	time_left = max - timer.Read() * 0.001f;
 	if(App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT)
 	{
 		acceleration = MAX_ACCELERATION;
@@ -159,13 +161,7 @@ update_status ModulePlayer::Update(float dt)
 
 	if (App->input->GetKey(SDL_SCANCODE_R) == KEY_DOWN)
 	{
-		//Restart the car
-		vehicle->SetPos(0, 0, 0);
-		acceleration = 0;
-		vec3 zero = { 0.0f, 0.0f, 0.0f };
-		vehicle->SetAngularVelocity(zero.x, zero.y, zero.z);
-		vehicle->SetLinearVelocity(zero.x, zero.y, zero.z);
-		vehicle->GetRotation(0);
+		Restart();
 	}
 	if (App->input->GetKey(SDL_SCANCODE_T) == KEY_DOWN)
 	{
@@ -176,6 +172,8 @@ update_status ModulePlayer::Update(float dt)
 		vehicle->SetLinearVelocity(zero.x, zero.y, zero.z);
 		vehicle->GetRotation(0);
 	}
+	if (time_left <= 0)
+		Restart();
 	vehicle->ApplyEngineForce(acceleration);
 	vehicle->Turn(turn);
 	vehicle->Brake(brake);
@@ -183,7 +181,7 @@ update_status ModulePlayer::Update(float dt)
 	vehicle->Render();
 
 	char title[80];
-	sprintf_s(title, "%.1f Km/h", vehicle->GetKmh());
+	sprintf_s(title, "%.1f Km/h Chrono %.2f", vehicle->GetKmh(),time_left);
 	App->window->SetTitle(title);
 
 	return UPDATE_CONTINUE;
@@ -200,6 +198,19 @@ void ModulePlayer::Camera() {
 
 	App->camera->Look(App->camera->Position + (speed* speed_camera), p);
 
+
+}
+void ModulePlayer::Restart() {
+
+	//Restart the car
+	vehicle->SetPos(0, 0, 0);
+	acceleration = 0;
+	time_left = max;
+	timer.Start();
+	vec3 zero = { 0.0f, 0.0f, 0.0f };
+	vehicle->SetAngularVelocity(zero.x, zero.y, zero.z);
+	vehicle->SetLinearVelocity(zero.x, zero.y, zero.z);
+	vehicle->GetRotation(0);
 
 }
 
