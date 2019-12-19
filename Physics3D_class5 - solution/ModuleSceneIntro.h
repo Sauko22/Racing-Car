@@ -27,6 +27,7 @@ public:
 	PhysBody3D* CreateRectangle(vec3 position, vec3 size, Color s_color, float mass);
 
 	void CreateMap();
+	void Radio();
 	/*void CreateSensor(vec3 position, vec4 rotation, vec3 size, Color s_color, SENSORS s_type, vec3 mod, vec4 target_rotation);*/
 public:
 	/*

@@ -60,6 +60,7 @@ public:
 	void Turn(float degrees);
 	float GetKmh() const;
 	vec3 GetForwardVector() const;
+	void GetRotation(float angle_r);
 public:
 
 	VehicleInfo info;

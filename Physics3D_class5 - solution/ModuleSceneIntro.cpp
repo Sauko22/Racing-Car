@@ -46,38 +46,7 @@ update_status ModuleSceneIntro::Update(float dt)
 	
 	
 	}
-	//Music list
-
-	if (App->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
-	{
-		App->audio->stopMusic();
-		sanic = App->audio->PlayMusic("Music/sanic.ogg");
-	}
-	if (App->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)
-	{
-		App->audio->stopMusic();
-		top = App->audio->PlayMusic("Music/top.ogg");
-	}
-	if (App->input->GetKey(SDL_SCANCODE_3) == KEY_DOWN)
-	{
-		App->audio->stopMusic();
-		take = App->audio->PlayMusic("Music/take.ogg");
-	}
-	if (App->input->GetKey(SDL_SCANCODE_4) == KEY_DOWN)
-	{
-		App->audio->stopMusic();
-		willy = App->audio->PlayMusic("Music/willy.ogg");
-	}
-	if (App->input->GetKey(SDL_SCANCODE_5) == KEY_DOWN)
-	{
-		App->audio->stopMusic();
-		españita = App->audio->PlayMusic("Music/espanita.ogg");
-	}
-	if (App->input->GetKey(SDL_SCANCODE_6) == KEY_DOWN)
-	{
-		App->audio->stopMusic();
-		us = App->audio->PlayMusic("Music/us.ogg");
-	}
+	Radio();
 	
 	return UPDATE_CONTINUE;
 }
@@ -624,6 +593,41 @@ void ModuleSceneIntro::CreateMap() {
 	CreateRectangle({ -5,1,-1 }, { 1, 4.0f, 1 }, Red, 0);
 
 	
+
+
+}
+void ModuleSceneIntro::Radio() {
+	if (App->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
+	{
+		App->audio->stopMusic();
+		sanic = App->audio->PlayMusic("Music/sanic.ogg");
+	}
+	if (App->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)
+	{
+		App->audio->stopMusic();
+		top = App->audio->PlayMusic("Music/top.ogg");
+	}
+	if (App->input->GetKey(SDL_SCANCODE_3) == KEY_DOWN)
+	{
+		App->audio->stopMusic();
+		take = App->audio->PlayMusic("Music/take.ogg");
+	}
+	if (App->input->GetKey(SDL_SCANCODE_4) == KEY_DOWN)
+	{
+		App->audio->stopMusic();
+		willy = App->audio->PlayMusic("Music/willy.ogg");
+	}
+	if (App->input->GetKey(SDL_SCANCODE_5) == KEY_DOWN)
+	{
+		App->audio->stopMusic();
+		españita = App->audio->PlayMusic("Music/espanita.ogg");
+	}
+	if (App->input->GetKey(SDL_SCANCODE_6) == KEY_DOWN)
+	{
+		App->audio->stopMusic();
+		us = App->audio->PlayMusic("Music/us.ogg");
+	}
+
 
 
 }

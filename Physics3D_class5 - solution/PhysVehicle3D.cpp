@@ -130,3 +130,26 @@ vec3 PhysVehicle3D::GetForwardVector() const
 	ret.Set(h.getX(), h.getY(), h.getZ());
 	return ret;
 }
+void PhysVehicle3D::GetRotation(float angle_r)
+{
+	
+	float matrix[16];
+	memset(matrix, 0.0f, sizeof(matrix));
+
+	// Keep position
+	vec3 p = GetPos();
+	matrix[12] = p.x;
+	matrix[13] = p.y;
+	matrix[14] = p.z;
+	matrix[15] = 1;
+
+	// Rotate the body by angle_r
+	matrix[0] = cos(angle_r);
+	matrix[2] = -sin(angle_r);
+	matrix[5] = 1;
+	matrix[8] = sin(angle_r);
+	matrix[10] = cos(angle_r);
+
+	SetTransform(matrix);
+
+}
