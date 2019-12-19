@@ -5,35 +5,49 @@ By the way, it's my first solo project, so don´t be so hush/mean with the criti
 ## Autor
 Pol Juan Santos --> https://github.com/Sauko22
 
-##Repository Link
+## Repository Link
 https://github.com/Sauko22/Racing-Car
 
 [RELEASE FOLDER LINK]--> https://github.com/Sauko22/Racing-Car/releases
 
-##Controls
+## Controls
 ### Movement
 UP - Accelerate
-DOWN - Decelerate / Move backwards 
+
+DOWN - Decelerate / Move backwards
+ 
 LEFT - Turn left
+
 RIGHT - Turn right
+
 B - Brake
+
 R - Respawn
+
 T - Apply rotation where you are.
 
 ### Radio
 You can choose between some of the hottests hits of the world. Press 1-6 to listen.
+
 1- Gotta go fast
+
 2- Try to be the TOP
+
 3- Take on you
+
 4- Para,para,paradise
+
 5- Fight for your country
+
 6- Be proud to be part of a comunity
 
 
 
-#Software and Lib used
+# Software and Lib used
 -Visual Studio 2019
+
 -SDL by Sam Oscar Lantinga
+
 -OpenGL
 
 # License
