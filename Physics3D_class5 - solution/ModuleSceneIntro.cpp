@@ -259,6 +259,9 @@ void ModuleSceneIntro::CreateMap() {
 	CreateRectangle({ -76,1,32 }, { 1, 4.0f, 1 }, White, 0);
 	CreateRectangle({ -78,1,32 }, { 1, 4.0f, 1 }, Red, 0);
 	CreateRectangle({ -80,1,32 }, { 1, 4.0f, 1 }, White, 0);
+	CreateRectangle({ -67,1,28 }, { 3.0f, 4.0f,4.0f }, Blue, 0);// rectangles
+	CreateRectangle({ -80,1,22}, { 3.0f, 4.0f,4.0f }, Blue, 0);
+	CreateRectangle({ -95,1,14 }, { 3.0f, 4.0f,4.0f }, Blue, 0);
 	CreateRectangle({ -82,1,32 }, { 1, 4.0f, 1 }, Red, 0);
 	CreateRectangle({ -84,1,32 }, { 1, 4.0f, 1 }, White, 0);
 	CreateRectangle({ -86,1,32 }, { 1, 4.0f, 1 }, Red, 0);
@@ -428,6 +431,10 @@ void ModuleSceneIntro::CreateMap() {
 	CreateRectangle({ -61,1,-92 }, { 1, 4.0f, 1 }, White, 0);
 	CreateRectangle({ -59,1,-92 }, { 1, 4.0f, 1 }, Red, 0);
 	CreateRectangle({ -57,1,-92 }, { 1, 4.0f, 1 }, White, 0);
+	CreateRectangle({ -43,1,-87 }, { 2, 2.0f, 2 }, Green, 0);//cubes
+	CreateRectangle({ -57,1,-80 }, { 2, 2.0f, 2 }, Green, 0);
+	CreateRectangle({ -70,1,-87 }, { 2, 2.0f, 2 }, Green, 0);
+	CreateRectangle({ -83,1,-80 }, { 2, 2.0f, 2 }, Green, 0);
 	CreateRectangle({ -55,1,-92 }, { 1, 4.0f, 1 }, Red, 0);
 	CreateRectangle({ -53,1,-92 }, { 1, 4.0f, 1 }, White, 0);
 	CreateRectangle({ -51,1,-92 }, { 1, 4.0f, 1 }, Red, 0);
@@ -616,7 +623,11 @@ void ModuleSceneIntro::Radio() {
 		App->audio->stopMusic();
 		us = App->audio->PlayMusic("Music/us.ogg");
 	}
-
+	if (App->input->GetKey(SDL_SCANCODE_7) == KEY_DOWN)
+	{
+		App->audio->stopMusic();
+		
+	}
 
 
 }
