@@ -122,15 +122,7 @@ bool ModulePlayer::CleanUp()
 update_status ModulePlayer::Update(float dt)
 {
 	turn = acceleration = brake = 0.0f;
-	float speed_cam = 0.09;
-	vec3 p = vehicle->GetPos();
-	vec3 f = vehicle->GetForwardVector();
-
-	vec3 dist_to_car = { -8.0f, 5.0f, -8.0f };
-	vec3 camera_new_position = { p.x + (f.x * dist_to_car.x), p.y + f.y + dist_to_car.y, p.z + (f.z * dist_to_car.z) };
-	vec3 speed_camera = camera_new_position - App->camera->Position;
-
-	App->camera->Look(App->camera->Position + (speed_cam * speed_camera), p);
+	Camera();
 	if(App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT)
 	{
 		acceleration = MAX_ACCELERATION;
@@ -197,5 +189,17 @@ update_status ModulePlayer::Update(float dt)
 	return UPDATE_CONTINUE;
 }
 
+void ModulePlayer::Camera() {
+	float speed = 0.09;
+	vec3 p = vehicle->GetPos();
+	vec3 f = vehicle->GetForwardVector();
 
+	vec3 dist_to_car = { -10.0f, 5.0f, -10.0f };
+	vec3 camera_new_position = { p.x + (f.x * dist_to_car.x), p.y + f.y + dist_to_car.y, p.z + (f.z * dist_to_car.z) };
+	vec3 speed_camera = camera_new_position - App->camera->Position;
+
+	App->camera->Look(App->camera->Position + (speed* speed_camera), p);
+
+
+}
 

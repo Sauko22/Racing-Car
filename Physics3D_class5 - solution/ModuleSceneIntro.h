@@ -28,6 +28,7 @@ public:
 
 	void CreateMap();
 	void Radio();
+	void CreateObstacle();
 	
 public:
 	
@@ -42,6 +43,9 @@ public:
 
 	PhysMotor3D* left_wheel;
 	PhysMotor3D* right_wheel;
+
+	
+
 	
 	p2List<Primitive*> map_objects;
 	//Music hits
@@ -51,6 +55,8 @@ public:
 	unsigned int  willy = 0;
 	unsigned int  españita = 0;
 	unsigned int  us = 0;
+	unsigned int  giorno = 0;
+	unsigned int  juju = 0;
 
 	
 };

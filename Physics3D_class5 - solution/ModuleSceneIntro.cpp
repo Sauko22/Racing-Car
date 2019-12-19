@@ -47,6 +47,7 @@ update_status ModuleSceneIntro::Update(float dt)
 	
 	}
 	Radio();
+	CreateObstacle();
 	
 	return UPDATE_CONTINUE;
 }
@@ -259,9 +260,7 @@ void ModuleSceneIntro::CreateMap() {
 	CreateRectangle({ -76,1,32 }, { 1, 4.0f, 1 }, White, 0);
 	CreateRectangle({ -78,1,32 }, { 1, 4.0f, 1 }, Red, 0);
 	CreateRectangle({ -80,1,32 }, { 1, 4.0f, 1 }, White, 0);
-	CreateRectangle({ -67,1,28 }, { 3.0f, 4.0f,4.0f }, Blue, 0);// rectangles1
-	CreateRectangle({ -80,1,20}, { 3.0f, 4.0f,4.0f }, Blue, 0);//rectangle2
-	CreateRectangle({ -98,1,10 }, { 3.0f, 4.0f,5.0f }, Blue, 0);//rectangle3
+	
 	CreateRectangle({ -82,1,32 }, { 1, 4.0f, 1 }, Red, 0);
 	CreateRectangle({ -84,1,32 }, { 1, 4.0f, 1 }, White, 0);
 	CreateRectangle({ -86,1,32 }, { 1, 4.0f, 1 }, Red, 0);
@@ -431,10 +430,7 @@ void ModuleSceneIntro::CreateMap() {
 	CreateRectangle({ -61,1,-92 }, { 1, 4.0f, 1 }, White, 0);
 	CreateRectangle({ -59,1,-92 }, { 1, 4.0f, 1 }, Red, 0);
 	CreateRectangle({ -57,1,-92 }, { 1, 4.0f, 1 }, White, 0);
-	CreateRectangle({ -43,1,-87 }, { 3, 3.0f, 3 }, Green, 0);//cubes1
-	CreateRectangle({ -57,1,-80 }, { 3, 3.0f, 3 }, Green, 0);//cube2
-	CreateRectangle({ -70,1,-87 }, { 3, 3.0f, 3 }, Green, 0);//cube3
-	CreateRectangle({ -83,1,-80 }, { 3, 3.0f, 3 }, Green, 0);//cube4
+	
 	CreateRectangle({ -55,1,-92 }, { 1, 4.0f, 1 }, Red, 0);
 	CreateRectangle({ -53,1,-92 }, { 1, 4.0f, 1 }, White, 0);
 	CreateRectangle({ -51,1,-92 }, { 1, 4.0f, 1 }, Red, 0);
@@ -626,8 +622,32 @@ void ModuleSceneIntro::Radio() {
 	if (App->input->GetKey(SDL_SCANCODE_7) == KEY_DOWN)
 	{
 		App->audio->stopMusic();
+		giorno = App->audio->PlayMusic("Music/giorno.ogg");
 		
+	}
+	if (App->input->GetKey(SDL_SCANCODE_8) == KEY_DOWN)
+	{
+		App->audio->stopMusic();
+		juju = App->audio->PlayMusic("Music/juju.ogg");
+
+	}
+	if (App->input->GetKey(SDL_SCANCODE_9) == KEY_DOWN)
+	{
+		App->audio->stopMusic();
+
 	}
 
 
+}
+void ModuleSceneIntro::CreateObstacle() {
+
+	if (App->input->GetKey(SDL_SCANCODE_F) == KEY_DOWN) {
+		CreateRectangle({ -67,1,29 }, { 3.0f, 4.0f,4.0f }, Blue, 0);// rectangles1
+		CreateRectangle({ -80,1,15 }, { 3.0f, 4.0f,4.0f }, Blue, 0);//rectangle2
+		CreateRectangle({ -98,1,10 }, { 3.0f, 4.0f,5.0f }, Blue, 0);//rectangle3
+		CreateRectangle({ -43,1,-87 }, { 3, 3.0f, 3 }, Green, 0);//cubes1
+		CreateRectangle({ -57,1,-80 }, { 3, 3.0f, 3 }, Green, 0);//cube2
+		CreateRectangle({ -70,1,-87 }, { 3, 3.0f, 3 }, Green, 0);//cube3
+		CreateRectangle({ -83,1,-77 }, { 3, 3.0f, 3 }, Green, 0);//cube4
+	}
 }
