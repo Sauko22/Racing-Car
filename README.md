@@ -30,6 +30,8 @@ T - Apply rotation where you are.
 
 F - Add obstacles in the circuit(hard mode).
 
+Y - Add 100 as timer(easy mode)
+
 ### Radio
 You can choose between some of the hottests hits of the world. Press 1-8 to listen.
 

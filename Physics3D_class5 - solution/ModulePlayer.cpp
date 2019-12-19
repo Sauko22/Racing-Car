@@ -172,6 +172,10 @@ update_status ModulePlayer::Update(float dt)
 		vehicle->SetLinearVelocity(zero.x, zero.y, zero.z);
 		vehicle->GetRotation(0);
 	}
+	if (App->input->GetKey(SDL_SCANCODE_Y) == KEY_DOWN)
+	{
+		max = 100;
+	}
 	if (time_left <= 0)
 		Restart();
 	vehicle->ApplyEngineForce(acceleration);
