@@ -28,16 +28,9 @@ public:
 
 	void CreateMap();
 	void Radio();
-	/*void CreateSensor(vec3 position, vec4 rotation, vec3 size, Color s_color, SENSORS s_type, vec3 mod, vec4 target_rotation);*/
+	
 public:
-	/*
-	PhysBody3D* pb_snake[MAX_SNAKE];
-	Sphere s_snake[MAX_SNAKE];
-
-	PhysBody3D* pb_snake2[MAX_SNAKE];
-	Sphere s_snake2[MAX_SNAKE];
-	*/
-
+	
 	PhysBody3D* pb_chassis;
 	Cube p_chassis;
 
@@ -59,5 +52,5 @@ public:
 	unsigned int  españita = 0;
 	unsigned int  us = 0;
 
-	/*p2List<PhysSensor3D> map_sensors;*/
+	
 };
