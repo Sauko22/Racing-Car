@@ -1,5 +1,5 @@
 # Racing Game
-This is the racing game/project of Pol Juan Santos(also known by Sauko). It's basically a F1 car and a circuit, just this. So please, enjoy :)
+This is the racing game/project of Pol Juan Santos(also known by Sauko). Enjoy :)
 By the way, it's my first solo project, so don´t be so hush/mean with the critics. Thanks.
 
 ## Autor
@@ -19,6 +19,8 @@ DOWN - Decelerate / Move backwards
 LEFT - Turn left
 
 RIGHT - Turn right
+
+SPACE - Turbo
 
 B - Brake
 
