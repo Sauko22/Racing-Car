@@ -1,5 +1,5 @@
 # Racing Game
-This is the racing game/project of Pol Juan Santos(also known by Sauko). Enjoy :)
+This is the racing game/project of Pol Juan Santos(also known by Sauko).Complete the circuit before you run out of time .Enjoy :)
 By the way, it's my first solo project, so don´t be so hush/mean with the critics. Thanks.
 
 ## Autor
@@ -24,12 +24,14 @@ SPACE - Turbo
 
 B - Brake
 
-R - Respawn
+R - Restart all
 
 T - Apply rotation where you are.
 
+F - Add obstacles in the circuit(hard mode).
+
 ### Radio
-You can choose between some of the hottests hits of the world. Press 1-6 to listen.
+You can choose between some of the hottests hits of the world. Press 1-8 to listen.
 
 1- Gotta go fast
 
@@ -43,7 +45,11 @@ You can choose between some of the hottests hits of the world. Press 1-6 to list
 
 6- Be proud to be part of a comunity
 
-Press 7 to stop the music
+7- Piano time
+
+8- Yare yare daze
+
+Press 9 to stop the music
 
 
 # Software and Lib used
