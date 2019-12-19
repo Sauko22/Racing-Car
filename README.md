@@ -43,6 +43,7 @@ You can choose between some of the hottests hits of the world. Press 1-6 to list
 
 6- Be proud to be part of a comunity
 
+Press 7 to stop the music
 
 
 # Software and Lib used

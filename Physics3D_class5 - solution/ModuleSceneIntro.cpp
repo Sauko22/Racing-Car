@@ -69,18 +69,7 @@ PhysBody3D* ModuleSceneIntro::CreateRectangle(vec3 position,  vec3 size, Color s
 	return App->physics->AddBody(*object, mass);
 }
 
-//void ModuleSceneIntro::CreateSensor(vec3 position, vec4 rotation, vec3 size, Color s_color, SENSORS s_type, vec3 mod, vec4 target_rotation)
-//{
-//
-//	Cube* object = new Cube();
-//
-//	object->SetPos(position.x, position.y, position.z);
-//	object->size = size;
-//	object->color = s_color;
-//	object->SetRotation(rotation.x, { rotation.y, rotation.z, rotation.w });
-//	map_sensors.add(App->physics->AddSensor(*object, mod, s_type, target_rotation));
-//
-//}
+
 
 void ModuleSceneIntro::CreateMap() {
 
